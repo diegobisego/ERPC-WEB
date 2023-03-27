@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- css -->
+    <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="./style/darkmode.css">
+    <!-- font awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/4ea6e3ab0b.js" crossorigin="anonymous"></script>
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- sweetAlert -->
+    <link href="sweetalert2.min.css">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- btns.css -->
+    <link href="https://cdnjs.com/libraries/bttn.css">
+    <link rel="stylesheet" href="./style/bttn.min.css">
+    <!-- anime.js -->
+    <script src="https://cdn.jsdelivr.net/npm/animejs@3.0.1/lib/anime.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+    <title>Ingreso de Pagos</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm" id="navbar">
+            <div>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a href="./panelAdmin.html"><button class="bttn-slant bttn-lg bttn-danger"><i
+                                    class="fa-solid fa-arrow-left"></i></button></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="botones-fondo">
+                <button class="cambio-dark" id="cambio-dark">
+                    <span><i class="fa-solid fa-sun"></i></span>
+                    <span><i class="fa-solid fa-moon"></i></span>
+                </button> 
+            </div>
+        </nav>
+    </header> 
+    <main class="container text-center" id="mainPagos">
+        <div class="row justify-content-center">
+            <div class="d-grid gap-3 col-sm-4 bg-light shadow-lg p-3 mb-5 mt-5 bg-body rounded border border-2">
+                <h1 class="fs-4 fw-light">INGRESO DE PAGOS</h1>
+                <form action="" id="form">
+                    <div class="mb-3" id="form-items">
+                        <label for="inDatePago" class="form-label mt-3">Fecha
+                            <input type="date" class="form-control mt-2 text-center" id="inFechaPago"
+                                aria-describedby="fecha">
+                        </label>
+                        <div>
+                            <label for="opCliente" class="form-label mt-3">Cliente
+                                <select class="form-select" aria-label="cliente" id="opCliente">
+                                    <option selected disabled>Seleccione un cliente</option>
+                                    <!-- se ingresa por dom la lista de clientes -->
+                                </select>
+                            </label>
+                        </div>
+                        <label for="inPago" class="form-label mt-3">Monto a Pagar
+                            <input type="number" class="form-control mt-2 text-center" id="inPago"
+                                aria-describedby="montoPago">
+                        </label>
+                        <div id="divFormaPago">
+                            <label for="" class="form-label mt-3">Forma de Pago
+                                <div id="tipoPago">
+                                    <template id="tempTipoPAgo">
+                                        <div class="form-check" id="divTipoPago">
+                                            <input class="form-check-input" type="radio" name="flexRadioDefault">
+                                            <label class="form-check-label" for="flexRadioDefault1">
+                                                <!-- aca van las formas de pago -->
+                                            </label>
+                                        </div>
+                                    </template>
+                                </div>
+                            </label>
+                            <div id="datosParaCheques">
+                                <label for="inFechaCheque" class="form-label mt-3">Fecha Cobro
+                                    <input type="date" class="form-control mt-2 text-center" id="inFechaCheque"
+                                        aria-describedby="fecha">
+                                </label>
+                                <label for="inMontoCheque" class="form-label mt-3">Nro de Cheque
+                                    <input type="number" class="form-control mt-2 text-center" id="inMontoCheque"
+                                        aria-describedby="montoPago">
+                                </label>
+                                <label for="inNombreEmisorCheque" class="form-label mt-3">Nombre Emisor
+                                    <input type="text" class="form-control mt-2 text-center" id="inNombreEmisorCheque"
+                                        aria-describedby="montoPago">
+                                </label>
+                                <div>
+                                    <label for="opBanco" class="form-label mt-3">Banco
+                                        <select class="form-select" aria-label="cliente" id="opBanco">
+                                            <option selected disabled>Seleccione un Banco</option>
+                                            <!-- se ingresa por dom la lista de clientes -->
+                                        </select>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-dark mt-5" id="btnCargaPago">Ingresar Pago</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+    <!-- js -->
+    <script src="./js/ingresoPagos.js"></script>
+    <script src="./js/alertas.js"></script>
+    <script src="./js/clases/cliente.js"></script>
+    <script src="./js/darkMode/darkMode.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,218 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* border: 1px solid red; */
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+body {
+    height: 100vh;
+    overflow: hidden;
+}
+
+#mainProductos {
+    height: auto;
+}
+
+/******** BOTONES NAV **********/
+
+
+
+#navbar {
+    display: flex;
+    justify-content: space-between;
+}
+
+.botones-fondo {
+    display: flex;
+    align-items: center;
+    padding-right: 30px;
+}
+
+#btn-user {
+    border-radius: 100px;
+    width: 50px;
+}
+
+
+
+
+/***************  MODIFICADORES DE LOS DIV DE PRODUCTOS ******************/
+
+#iconProduct {
+    width: 10px;
+    height: 10px;
+}
+
+#div-product > div > button {
+    width: 20px;
+    border-radius: 5px;
+    background-color: rgb(148, 176, 205);
+}
+
+
+#imputProduct {
+    width: 30px;
+}
+
+#div-product > div {
+    margin: 20px 0;
+    border: 1px solid white;
+    padding: 20px 0;
+}
+
+
+
+#div-btn-comprar {
+    margin-top: 20px;
+}
+
+#imputProduct{
+    text-align: center;
+}
+
+.not-active { 
+    pointer-events: none; 
+    cursor: default; 
+} 
+
+#btnCarrito {
+    margin-left: 50px;
+    margin-right: 50px;
+    background-color: rgb(194, 220, 108);
+    border-radius: 5px;
+}
+
+#btnCarrito:hover{
+    background-color: aquamarine;
+    transition: .5s;
+}
+
+/***************  BOTONES MAIN ******************/
+
+.bttn-unite.bttn-lg.bttn-primary {
+    margin-top: 20px;
+}
+
+.nav-item {
+    margin-left: 20px;
+}
+/***************  INPUT ******************/
+#inCantidad {
+    width: 130px;
+}
+
+#idUM {
+    width: 80px;
+}
+
+/***************  FORM ******************/
+
+#from {
+    display: flex;
+    justify-content: center;
+}
+
+#form-items {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+ 
+/*************** FORM VENTAS ******************/
+
+
+#form-ventas {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#form-ventas input, #form-ventas select {
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+}
+
+
+#portalVentas, #portalPagos {
+    justify-content: space-between;
+    
+}
+
+
+#opCliente {
+    margin-top: 7px;
+}
+
+#idTotalVenta {
+    font-weight: bold;
+}
+
+
+#btnFinalizarVenta {
+    width: 200px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/*************** FORM CLIENTES ******************/
+
+#inNombreCliente,#inTelefonoCliente, #inDniCuitCliente, #inDomicilioCliente, #inEmailCliente,#selCiudadCliente {
+    width: 250px;
+}
+
+
+#divTipoPago {
+    display: inline-flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0 5px;
+}
+
+#divTipoPago label {
+    margin-left: 8px;
+}
+
+#divClientes {
+    width: 40vw;
+}
+
+
+/*************** CUENTAS CORRIENTES ******************/
+
+#mainCtaCte, #mainPagos select {
+    text-align: center;
+}
+
+.display-4 , .display-6 {
+    display: flex;
+    justify-content: center;
+}
+
+
+/*************** CUENTAS PAGOS ******************/
+
+#inDatePago {
+    width: 200px;
+}
+
+#datosParaCheques {
+    display: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2px;
+}

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- css -->
+  <link rel="stylesheet" href="./style/style.css">
+  <link rel="stylesheet" href="./style/darkmode.css">
+  <!-- font awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/4ea6e3ab0b.js" crossorigin="anonymous"></script>
+  <!-- bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <!-- sweetAlert -->
+  <link href="sweetalert2.min.css">
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <!-- btns.css -->
+  <link href="https://cdnjs.com/libraries/bttn.css">
+  <link rel="stylesheet" href="./style/bttn.min.css">
+  <!-- anime.js -->
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.0.1/lib/anime.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+
+  <title>Ingresar Ventas</title>
+</head>
+
+<body>
+  <header>
+    <nav class="navbar navbar-expand-sm" id="navbar">
+      <div>
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a href="./panelAdmin.html"><button class="bttn-slant bttn-lg bttn-danger"><i
+                  class="fa-solid fa-arrow-left"></i></button></a>
+          </li>
+        </ul>
+      </div>
+      <div class="botones-fondo">
+        <button class="cambio-dark" id="cambio-dark">
+          <span><i class="fa-solid fa-sun"></i></span>
+          <span><i class="fa-solid fa-moon"></i></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+  <main class="container text-center">
+    <div class="row" id="portalVentas">
+      <div>
+        <label for="fecha" class="form-label mt-3">Fecha
+          <input type="date" class="form-control mt-2 text-center" id="inDate" aria-describedby="fecha" name="fecha">
+        </label>
+        <label for="exampleInputEmail1" class="form-label mt-3">Nro Factura
+          <input type="number" class="form-control mt-2 text-center" id="inNroFactura" aria-describedby="tipo">
+        </label>
+        <label for="exampleInputEmail1" class="form-label mt-3">Cliente
+          <select class="form-select" aria-label="Default select example" id="opCliente">
+            <option selected disabled>Seleccione un cliente</option>
+            <!-- se ingresa por dom la lista de clientes -->
+          </select>
+        </label>
+        <label for="exampleInputEmail1" class="form-label mt-3">Tipo de Pago
+          <select class="form-select" aria-label="Default select example" id="opTipoPago">
+            <option selected disabled>Seleccione un tipo</option>
+            <!-- se ingresa por dom la lista de tipo -->
+          </select>
+        </label>
+        <hr>
+      </div>
+      <div class="d-grid gap-3 col-sm-4 bg-light shadow-lg p-3 mb-5 mt-5 bg-body rounded border border-2">
+        <h1 class="fs-4 fw-light">INGRESO DE VENTA</h1>
+        <form action="" id="form">
+          <div class="mb-3" id="form-ventas">
+            <label for="exampleInputEmail1" class="form-label mt-3 ">Producto
+              <select class="form-select text-center mt-2" aria-label="Default select example" id="idVtaProd">
+                <option value="" selected disabled>Seleccione un producto</option>
+                <!-- aca va por dom elegir el producto a vender-->
+              </select>
+            </label>
+            <label for="exampleInputEmail1" class="form-label mt-3">Cantidad
+              <input type="number" class="form-control mt-2 text-center" id="inCantidadVenta" aria-describedby="stock">
+            </label>
+            <label for="exampleInputEmail1" class="form-label mt-3">Precio por Unidad
+              <input type="number" class="form-control mt-2 text-center" id="inPrecUni" aria-describedby="stock">
+            </label>
+            <button type="submit" class="btn btn-dark mt-5" id="btnagregarListaVenta">Agregar</button>
+          </div>
+        </form>
+      </div>
+      <div class="d-grid gap-3 col-sm-6 bg-light shadow-lg p-3 mb-5 mt-5 bg-body rounded border border-2">
+        <h1 class="fs-4 fw-light">RESUMEN DE VENTA</h1>
+        <form action="" id="formVentas">
+          <!-- aca van los li por dom de las ventas -->
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Producto</th>
+                <th scope="col">Cantidad</th>
+                <th scope="col">Precio</th>
+              </tr>
+            </thead>
+            <tbody id="tVentas">
+              <template id="tempDetalleVenta">
+                <tr id="trTemp">
+                  <th scope="row"></th>
+                  <td></td>
+                  <td><span id="umProducto"></span></td>
+                  <td><span>$ </span></td>
+                  <td>
+                  <td><button class="btn btn-danger" id="btnEliminar">Eliminar</button></td>
+                  </td>
+                </tr>
+              </template>
+            </tbody>
+            <tr>
+              <th></th>
+              <td></td>
+              <td style="font-weight: bold;">TOTAL</td>
+              <td id="idTotalVenta"></td>
+            </tr>
+            <tfoot>
+              <hr>
+            </tfoot>
+          </table>
+          <button class="btn btn-dark mt-5" id="btnFinalizarVenta">Finalizar Venta</button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <!-- bootstrap -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+    integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+    integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+    crossorigin="anonymous"></script>
+  <!-- js -->
+  <script src="./js/ingresoVentas.js"></script>
+  <script src="./js/clases/producto.js"></script>
+  <script src="./js/darkMode/darkMode.js"></script>
+  <script src="./js/alertas.js"></script>
+  <script src="./js/Clases/ProductoVenta.js"></script>
+</body>
+
+</html>

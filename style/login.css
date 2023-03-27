@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right, #444444 0%, #CCCCCC 100%);
+}
+
+#form {
+    justify-content: center;
+    align-items: center;
+    padding: 50px 30px;
+    background-color: rgb(239, 235, 230);
+}
+
+#logo {
+    width: 340px;
+    height: auto;
+}
+
+#divRegistro {
+    display: flex;
+}
+
+#divRegistro a {
+    margin-left: 10px;
+}
+
+#divRegistroUusuario input {
+    width: 400px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#btnRegistrar,
+#btnCancelar {
+    margin-right: 20px;
+}
+
+#usuario, #password, #regUser, #regPass {
+    text-align: center;
+}
