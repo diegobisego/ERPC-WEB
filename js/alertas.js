@@ -74,7 +74,7 @@ const alertEliminarConfirm = (param, fn) => {
   });
 };
 
-//validaciones de ingresos usuarios invalidos
+//validaciones de cualquier cosa
 const invalido = (data) => {
   Swal.fire({
     position: "top",

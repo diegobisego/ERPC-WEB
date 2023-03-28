@@ -15,7 +15,8 @@ btnRegistrar.addEventListener("click", () => {
   const regPassRepeat = document.querySelector("#regPassRepeat").value;
 
   if (regPass !== regPassRepeat) {
-    return invalido(7);
+    const data = 'Las contraseñas deben coincidir'
+    return invalido(data);
   }
 
   const newUser = {
