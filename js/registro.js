@@ -33,7 +33,7 @@ btnRegistrar.addEventListener("click", () => {
 const postRegistro = (data) => {
   try {
     instance // instancia de axios
-      .post("/register", data)
+      .post('/register', data)
       .then((response) => {
         if (response.data.seccion == "mail" && response.data.success == false) {
           return invalido(6, response.data.result); //correo ya existente
