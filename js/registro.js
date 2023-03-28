@@ -37,10 +37,10 @@ const postRegistro = (data) => {
       .post('/register', data)
       .then((response) => {
         if (response.data.seccion == "mail" && response.data.success == false) {
-          return invalido(6, response.data.result); //correo ya existente
+          return invalido(response.data.result); //correo ya existente
         }
         if (response.data.seccion == "pass" && response.data.success == false) {
-          return invalido(2); //password invalido
+          return invalido(response.data.result); //password invalido
         }
 
         alertCarga(1, "Usuario"); //sino, se carga el nuevo usuario
