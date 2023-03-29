@@ -16,7 +16,8 @@ btnIngresar.addEventListener("click", () => {
   //capturo el usuario y pass del formulario
   let user = document.querySelector("#usuario").value;
   const pass = document.querySelector("#password").value;
-  // user = user.toLowerCase(); //paso a minusculas
+  
+  user = user.toLowerCase(); //paso a minusculas
 
 
 
