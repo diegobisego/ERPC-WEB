@@ -19,6 +19,8 @@ btnIngresar.addEventListener("click", () => {
   
   user = user.toLowerCase(); //paso a minusculas
 
+  console.log(user,pass)
+
 
 
 })
