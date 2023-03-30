@@ -19,8 +19,12 @@ btnIngresar.addEventListener("click", () => {
   
   user = user.toLowerCase(); //paso a minusculas
 
-  console.log(user,pass)
+  const newLogin = {
+    user,
+    pass
+  }
 
+  postLogin(newLogin)
 
 
 })
@@ -36,17 +40,17 @@ const postLogin = (data) => {
       .then((response) => {
         console.log(response);
 
-        // if (response.data.seccion == "mail" && response.data.success == false) {
-        //   return invalido(6, response.data.result); //si es mail con false, da la alerta del incorrecto correo
-        // }
-        // if (response.data.seccion == "pass" && response.data.success == false) {
-        //   return invalido(2);
-        // }
+        if (response.data.seccion == "mail" && response.data.success == false) {
+          return invalido(6, response.data.result); //si es mail con false, da la alerta del incorrecto correo
+        }
+        if (response.data.seccion == "pass" && response.data.success == false) {
+          return invalido(2);
+        }
 
-        // alertCarga(1, "Usuario"); //si dice user y es true realiza la carga del usuario
-        // setTimeout(() => {
-        //   window.location.replace(response.request.responseURL);
-        // }, 1000);
+        alertCarga(1, "Usuario"); //si dice user y es true realiza la carga del usuario
+        setTimeout(() => {
+          window.location.replace(response.request.responseURL);
+        }, 1000);
       })
       .catch((error) => {
         console.log(error);
