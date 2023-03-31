@@ -1,5 +1,5 @@
 const instance = axios.create({
-  baseURL: 'https://distribuidorabisego2.glitch.me/api',
+  baseURL: 'https://distribuidorabisego3.glitch.me/api',
   // baseURL: 'https://distribuidorabisego.up.railway.app/api/',
   timeout: 5000, // tiempo máximo de espera de respuesta (en milisegundos)
   headers: {
