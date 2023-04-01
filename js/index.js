@@ -15,7 +15,7 @@ btnIngresar.addEventListener("click", () => {
   let user = document.querySelector("#usuario").value;
   const password = document.querySelector("#password").value;
 
-  email = user.toLowerCase(); //paso a minusculas
+  const email = user.toLowerCase(); //paso a minusculas
 
   const newLogin = {
     email,
