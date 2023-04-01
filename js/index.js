@@ -18,8 +18,8 @@ btnIngresar.addEventListener("click", () => {
   user = user.toLowerCase(); //paso a minusculas
 
   const newLogin = {
-    user,
-    pass,
+    email,
+    password,
   };
 
   postLogin(newLogin);
